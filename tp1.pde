@@ -48,6 +48,8 @@ void draw() {
   if (pantalla == 0) {
     // Dibujar sol y luz que se mueven siguiendo la funcion seno
     fill(sol);
+    // Variable para cambiar el tamanio del sol -- round(sin(frameCount*PI/40)*5+100)
+    // sin(frameCount*PI/40)*5+100 -> el tamanio cambia debido a frameCount, PI/40 determina la frecuencia, *5 cambia la amplitud y el +100 le da un tamanio minimo al sol
     int tamanioSol = round(sin(frameCount*PI/40)*5+100);
     ellipse(width/2, 140, tamanioSol, tamanioSol);
     fill(sol, 20);
@@ -107,6 +109,7 @@ void draw() {
     // Mover el texto mediante height/2 + round(sin(fotogramas*PI/80)*50) - 100
     // height/2 mitad de la altura de la pantalla
     // round(sin(fotogramas*PI/80)*50) redondear el valor calculado con la funcion seno, el valor dividiendo a PI (80) modifica la frecuencia, mientras que el valor multiplicando al seno (50) modifica la amplitud
+    // El -100 desplaza el texto 100px de la mitad de la altura de la pantalla 
     text("Con un sol hecho a partir de 200 luces de monofrecuencia, máquinas de neblina y paredes y techo cubierto por espejos, se genera la sensación de encontrarse en un espacio amplio con un tiempo estático", 20+fotogramas, height/2 + round(sin(fotogramas*PI/80)*50) - 100, 400, 500);
   } else if (pantalla == 4) {
     image(pantalla4, 0, 0);
