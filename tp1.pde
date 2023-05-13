@@ -98,7 +98,7 @@ void draw() {
     rotate(-HALF_PI+HALF_PI/2);
     // Rotar en base a los fotogramas para mover el texto
     rotate(fotogramas/PI/80);
-    text("Es una instalación que genera la ilusión de estar cerca del sol rodeado de niebla", 0, -600, 200, 400);
+    text("Es una instalacion que genera la ilusion de estar cerca del sol rodeado de niebla", 0, -600, 200, 400);
 
     pop();
   } else if (pantalla == 3) {
@@ -110,7 +110,7 @@ void draw() {
     // height/2 mitad de la altura de la pantalla
     // round(sin(fotogramas*PI/80)*50) redondear el valor calculado con la funcion seno, el valor dividiendo a PI (80) modifica la frecuencia, mientras que el valor multiplicando al seno (50) modifica la amplitud
     // El -100 desplaza el texto 100px de la mitad de la altura de la pantalla 
-    text("Con un sol hecho a partir de 200 luces de monofrecuencia, máquinas de neblina y paredes y techo cubierto por espejos, se genera la sensación de encontrarse en un espacio amplio con un tiempo estático", 20+fotogramas, height/2 + round(sin(fotogramas*PI/80)*50) - 100, 400, 500);
+    text("Con un sol hecho a partir de 200 luces de monofrecuencia, maquinas de neblina y paredes y techo cubierto por espejos, se genera la sensacion de encontrarse en un espacio amplio con un tiempo estatico", 20+fotogramas, height/2 + round(sin(fotogramas*PI/80)*50) - 100, 400, 500);
   } else if (pantalla == 4) {
     image(pantalla4, 0, 0);
 
