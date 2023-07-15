@@ -1,38 +1,36 @@
+// Dibujar un boton rectangular
 void dibujarBoton(String texto, float x, float y, float ancho, float alto) {
   push();
-  color fondo = blanco;
-  color efectoOver = rojo;
-
+  // El color cambia dependiendo si el mouse se encuentra sobre el boton o no
   if (colisionBoton(x, y, ancho, alto)) {
-    fill(efectoOver);
+    fill(rojo);
   } else {
-    fill(fondo);
+    fill(blanco);
   }
 
   rectMode(CENTER);
   rect(x, y, ancho, alto);
-
+  
+  // Escribir el texto
   fill(negro);
   textAlign(CENTER, CENTER);
   text(texto, x, y );
 
   pop();
 }
-
+// Dibujar un boton circular, se realizó una sobrecarga para que dependiendo la cantidad de parametros se pueda dibujar un boton rectangular o uno circular
 void dibujarBoton(String texto, float x, float y, float diametro) {
   push();
-  color fondo = blanco;
-  color efectoOver = rojo;
-
+// El color cambia dependiendo si el mouse se encuentra sobre el boton o no
   if (colisionBoton(x, y, diametro)) {
-    fill(efectoOver);
+    fill(rojo);
   } else {
-    fill(fondo);
+    fill(blanco);
   }
 
   ellipseMode(CENTER);
   ellipse(x, y, diametro, diametro);
-
+// Escribir el texto
   fill(negro);
   textAlign(CENTER, CENTER);
   text(texto, x, y );
