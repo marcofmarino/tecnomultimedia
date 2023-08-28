@@ -1,3 +1,4 @@
+// Dibujar un botón rectangular
 function dibujarBoton(texto, x, y, ancho, alto) {
   push();
   // El color cambia dependiendo si el mouse se encuentra sobre el boton o no
@@ -15,14 +16,15 @@ function dibujarBoton(texto, x, y, ancho, alto) {
   textAlign(CENTER, CENTER);
   textSize(20);
   text(texto, x, y );
-
   pop();
 }
 
+// Comprobar la colisión con un botón rectangular
 function colisionBoton(x, y, ancho, alto) {
   return mouseX>x-ancho/2 && mouseX<x+ancho/2 && mouseY>y-alto/2 && mouseY<y+alto/2;
 }
 
+// Dibujar un círculo a modo de cursor, en la posición del mouse
 function cursorCircular() {
   push();
   stroke("CYAN");
