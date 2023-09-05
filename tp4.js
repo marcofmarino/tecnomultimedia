@@ -7,9 +7,16 @@ Video:
 -----------------------------------------
 */
 
-const colorPersonaje = "CYAN";
-const colorEnemigo = "CHARTREUSE";
-const colorProyectil = "RED";
+const colorFondo = "#222222";
+const colorTexto = "#20FFFF";
+
+const colorPersonaje = "#20FFFF";
+const colorEnemigo = "#FF18E4";
+const colorProyectil = "#20FF20";
+
+const colorBotonNormal = "#20FFFF";
+const colorBotonHover = "#F2F2F2";
+const textoBoton = "#222222";
 
 let puntos = 0;
 let angulo;
@@ -54,7 +61,7 @@ function setup() {
 }
 
 function draw() {
-  background("#222222");
+  background(colorFondo);
   
   // Utilización de un switch-case para determinar la pantalla que debe ser mostrada de acuerdo al estado, las pantallas se encuentran en pantallas.js
   switch(pantalla) {

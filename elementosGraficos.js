@@ -2,16 +2,16 @@
 function dibujarBoton(texto, x, y, ancho, alto) {
   push();
   if (colisionBoton(x, y, ancho, alto)) {
-    fill("#f2f2f2");
+    fill(colorBotonHover);
   } else {
-    fill("#10f0FF")
+    fill(colorBotonNormal);
   }
 
   rectMode(CENTER);
   rect(x, y, ancho, alto, 5);
 
   // Escribir el texto
-  fill("#222222");
+  fill(textoBoton);
   textAlign(CENTER, CENTER);
   textSize(20);
   text(texto, x, y);
@@ -26,8 +26,8 @@ function colisionBoton(x, y, ancho, alto) {
 // Dibujar un círculo a modo de cursor en la posición del mouse
 function cursorCircular() {
   push();
-  stroke("CYAN");
-  fill("BLACK");
+  stroke(colorPersonaje);
+  fill(colorFondo);
   ellipse(mouseX, mouseY, 20, 20);
   pop();
 }

@@ -1,8 +1,7 @@
 
-
 function menuPrincipal() {
   push();
-  fill("CYAN");
+  fill(colorTexto);
   text("Gladiador de Neón", width/2, height/2-100);
   pop();
   dibujarBoton("JUGAR", width/2, height/2 + 135, 200, 30);
@@ -12,7 +11,7 @@ function menuPrincipal() {
 
 function selectorDificultad() {
   push();
-  fill("#f2f2f2");
+  fill(colorTexto);
   text("DIFICULTAD", width/2, height/2 - 100);
   pop();
 
@@ -21,9 +20,7 @@ function selectorDificultad() {
   dibujarBoton("DIFÍCIL", width/2, height/2 + 35, 200, 30);
 
   dibujarBoton("VOLVER AL MENÚ", width/2, height/2 + 135, 200, 30);
-
 }
-
 
 function finJuego() {
   push();
@@ -43,7 +40,7 @@ function finJuego() {
 function hud() {
   push();
   textSize(30);
-  fill("WHITE");
+  fill(colorTexto);
   text(str(puntos), width/2, 50);
   pop();
 }
@@ -74,7 +71,7 @@ function jugando() {
 function instrucciones() {   // Pantalla de instrucciones
   dibujarBoton("VOLVER AL MENÚ", width/2, height/2 + 205, 200, 30);
   push();
-  fill("CYAN");
+  fill(colorTexto);
   textSize(20);
   text("Objetivo: Eliminar 100 enemigos", width/2, 100);
   text("Disparar", 170, 170);
@@ -85,7 +82,7 @@ function instrucciones() {   // Pantalla de instrucciones
 
 function creditos() {  // Pantalla de créditos
   push();
-  fill("CYAN");
+  fill(colorTexto);
   textSize(20);
   text("Créditos", width/2, 100);
   text("Marco Marino", width/2, 150);
@@ -96,7 +93,7 @@ function creditos() {  // Pantalla de créditos
   text("http://bit.ly/ghostrifter-yt", width/2, 375);
   text("Creative Commons — Attribution-ShareAlike 3.0 Unported", width/2, 400);
   text("CC BY-SA 3.0", width/2, 425)
-    text("Free Download: https://hypeddit.com/track/ymgcr0", width/2, 450);
+  text("Free Download: https://hypeddit.com/track/ymgcr0", width/2, 450);
   pop();
   dibujarBoton("VOLVER AL MENÚ", width/2, height/2 + 205, 200, 30);
 }
