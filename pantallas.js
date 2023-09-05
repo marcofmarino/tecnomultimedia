@@ -61,7 +61,7 @@ function jugando() {
   enemigos();
 
   angulo =  movimiento(posicionPersonaje, posicionMouse.copy(), rapidezPersonaje, distPersonaje);
-  dibujarPersonaje(posicionPersonaje, angulo, tamanioPersonaje, colorPersonaje);
+  dibujarPersonaje(angulo);
   
   //perdio = comprobarColisiones();
   if (comprobarColisiones()) {

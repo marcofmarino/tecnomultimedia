@@ -9,10 +9,10 @@ function moverProyectiles() {
   });
 }
 
-function dibujarProyectiles(proyectilAa) {
+function dibujarProyectiles(proyectil) {
   push();
-  fill("#FF2020");
-  translate(proyectilAa.x, proyectilAa.y);
+  fill(colorProyectil);
+  translate(proyectil.x, proyectil.y);
   ellipse(0, 0, 8, 8);
   pop();
 }

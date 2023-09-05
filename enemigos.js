@@ -11,20 +11,20 @@ function crearEnemigo() {
 function enemigos() {
   enemigosArray.forEach(enemigo => {
     angulo = movimiento(enemigo[0], enemigo[1], rapidezEnemigos[dificultad], 5);
-    dibujarEnemigo(enemigo[0], angulo, tamanioEnemigo, "CHARTREUSE");
+    dibujarEnemigo(enemigo[0], angulo, tamanioEnemigo);
   });
 }
 
-function dibujarEnemigo(posicion, angulo, tamanio, colorEnemigo) {
+function dibujarEnemigo(posicion, angulo) {
   push();
-  stroke(colorEnemigo)
+  stroke(colorEnemigo);
   strokeWeight(3);
   noFill();
   translate(posicion.x, posicion.y);
   rotate(-angulo);
-  ellipse(0, 0, tamanio, tamanio);
+  ellipse(0, 0, tamanioEnemigo, tamanioEnemigo);
   strokeWeight(2);
-  arc(0, 0, tamanio*0.75, tamanio*0.75, -PI*0.75, -PI*0.25);
+  arc(0, 0, tamanioEnemigo*0.75, tamanioEnemigo*0.75, -PI*0.75, -PI*0.25);
   pop();
 }
 

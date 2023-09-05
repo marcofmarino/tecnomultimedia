@@ -6,6 +6,11 @@ Comisión 3
 Video:
 -----------------------------------------
 */
+
+const colorPersonaje = "CYAN";
+const colorEnemigo = "CHARTREUSE";
+const colorProyectil = "RED";
+
 let puntos = 0;
 let angulo;
 let posicionMouse;
@@ -18,7 +23,6 @@ let musicaJugando;
 let posicionPersonaje;
 let rapidezPersonaje = 6;
 const tamanioPersonaje = 40;
-const colorPersonaje = "CYAN";
 const distPersonaje = 35;
 
 let enemigosArray;
@@ -115,26 +119,25 @@ function mousePressed(){
     // Si se seleccionó una dificultad -> empezar=true
     if (empezar) {
       puntos = 0; // Resetear puntos
-
       // Si ya está sonando la música de juego se para, después se inicia para que siempre comience de nuevo al empezar a jugar
       if (musicaJugando.isPlaying()) {
         musicaJugando.stop();
       }
       musicaJugando.play();
 
-      // Inicialización de elementos de juego, las funciones se encuentran en personaje.js, disparos.js y enemigos.js
+      // Inicialización de elementos de juego, las funciones se encuentran en personaje.js, proyectiles.js y enemigos.js
       inicializarEnemigos();
       inicializarPersonaje();
       inicializarProyectiles();
 
-      pantalla = 2; // Se coloca el estado en modo juego
+      pantalla = 2; // Se pasa a la pantalla de juego
     }
     break;
 
   case 2:
     // Pantalla de juego
-    // Si se reliza click se realiza un disparo
-    let direccion = createVector(mouseX - posicionPersonaje.x, mouseY - posicionPersonaje.y);
+    // Si se reliza click se dispara un proyectil
+    let direccion = posicionMouse.copy().sub(posicionPersonaje);
     direccion.normalize();
     proyectiles.push([posicionPersonaje.copy(), direccion]);
     break;
@@ -147,16 +150,16 @@ function mousePressed(){
       pantalla = 0;
     }
     break;
+
   case 4:
     // Pantalla de instrucciones
-
-    if (colisionBoton(width/2, height/2 + 205, 200, 30)) {  // Volver al menú principal
+    if (colisionBoton(width/2, height/2 + 205, 200, 30)) {  // Volver al menú principa
       pantalla = 0;
     }
     break;
+
   case 5:
     // Pantalla de créditos
-
     if (colisionBoton(width/2, height/2 + 205, 200, 30)) { // Volver al menú principal
       pantalla = 0;
     }
