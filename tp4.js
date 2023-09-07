@@ -7,6 +7,7 @@ Video:
 -----------------------------------------
 */
 
+// Colores 
 const colorFondo = "#222222";
 const colorTexto = "#20FFFF";
 
@@ -18,20 +19,24 @@ const colorBotonNormal = "#20FFFF";
 const colorBotonHover = "#F2F2F2";
 const textoBoton = "#222222";
 
+// Variables para controlar elementos del juego
 let puntos = 0;
 let angulo;
 let posicionMouse;
 let pantalla = 0;
 let dificultad = 0;
 
+// Variables para cargar recursos externos
 let imagenMouse;
 let musicaJugando;
 
+// Variables y constantes relacionadas con el personaje
 let posicionPersonaje;
 let rapidezPersonaje = 6;
 const tamanioPersonaje = 40;
 const distPersonaje = 35;
 
+// Variables y constantes relacionadas con los enemigos
 let enemigosArray;
 let puntosSpawn;
 let tiempoSpawnEnemigos = [400, 350, 300];
@@ -39,6 +44,7 @@ let proximoEnemigo;
 const rapidezEnemigos = [4, 4, 5];
 const tamanioEnemigo = 40;
 
+// Variable y constante relacionada con proyectiles
 let proyectiles;
 const rapidezProyectiles = 15;
 
@@ -55,7 +61,7 @@ function setup() {
   textAlign(CENTER, CENTER);
   textSize(40);
   ellipseMode(CENTER);
-
+// Inicializar el array puntosSpawn con 4 vectores que representan los puntos en los que pueden aparecer los enemigos
   puntosSpawn = [createVector(0, 0), createVector(width, 0), createVector(width, height), createVector(0, height)];
   posicionMouse = createVector(mouseX, mouseY);
 }
@@ -107,7 +113,6 @@ function mousePressed(){
     break;
   case 1:
     // Pantalla selección de dificultad
-
     // Comprueba si se presionó algún botón de dificultad o se volvió al menú
     let empezar = false;
     if (colisionBoton(width/2, height/2 - 35, 200, 30)) {           // Fácil
@@ -143,9 +148,10 @@ function mousePressed(){
 
   case 2:
     // Pantalla de juego
-    // Si se reliza click se dispara un proyectil
+    // Cada vez que se realiza un click se añade un proyectil al array proyectiles, con una dirección que va desde el centro del personaje a la posición del mouse
     let direccion = posicionMouse.copy().sub(posicionPersonaje);
-    direccion.normalize();
+    direccion.normalize(); // Se normaliza el vector para que tenga una módulo = 1
+    // Cada proyectil es un array que contiene su posición y dirección
     proyectiles.push([posicionPersonaje.copy(), direccion]);
     break;
 

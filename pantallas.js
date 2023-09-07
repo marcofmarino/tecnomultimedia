@@ -1,4 +1,4 @@
-
+// Dibujar el menú principal
 function menuPrincipal() {
   push();
   fill(colorTexto);
@@ -8,7 +8,7 @@ function menuPrincipal() {
   dibujarBoton("INSTRUCCIONES", width/2, height/2 + 170, 200, 30);
   dibujarBoton("CRÉDITOS", width/2, height/2 + 205, 200, 30);
 }
-
+// Dibujar el selector de dificultad
 function selectorDificultad() {
   push();
   fill(colorTexto);
@@ -22,6 +22,7 @@ function selectorDificultad() {
   dibujarBoton("VOLVER AL MENÚ", width/2, height/2 + 135, 200, 30);
 }
 
+// Dibujar la pantalla de fin de juego
 function finJuego() {
   push();
   // Con un operador condicional ternario se determina que texto y color se utiliza para mostrar, puntos>=100 muestra "¡GANASTE!" de lo contrario "FIN DEL JUEGO"
@@ -45,22 +46,28 @@ function hud() {
   pop();
 }
 
+// Muestra todo lo contenido durante la partida
 function jugando() {
+  // Calcular posición de los proyectiles
   moverProyectiles();
-
+  
+  // Actualizar un vector que contiene la posición del mouse
   posicionMouse.x = mouseX;
   posicionMouse.y = mouseY;
 
+  // Al pasar el tiempo necesario instancia otro enemigo
   if (millis() >= proximoEnemigo) {
     crearEnemigo();
     proximoEnemigo = millis() + tiempoSpawnEnemigos[dificultad];
   }
+  // Mover y dibujar enemigos
   enemigos();
 
+  // Calcula el movimiento del personaje y lo dibuja
   angulo =  movimiento(posicionPersonaje, posicionMouse.copy(), rapidezPersonaje, distPersonaje);
   dibujarPersonaje(angulo);
   
-  //perdio = comprobarColisiones();
+  // Compureba todas las colisiones y en caso de que devuelva true, termina la partida
   if (comprobarColisiones()) {
     pantalla = 3;
   }

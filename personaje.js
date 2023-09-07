@@ -1,4 +1,5 @@
 //Archivo que incluye funciones relacionadas al personaje del jugador
+// Dibuja al personaje, utiliza un ángulo para rotarlo en dirección a la ubicación del mouse
 function dibujarPersonaje(angulo) {
   push();
   stroke(colorPersonaje);
@@ -14,6 +15,7 @@ function dibujarPersonaje(angulo) {
   pop();
 }
 
+// Al iniciar una partida se coloca la ubicación del jugador en el centro de la pantalla
 function inicializarPersonaje() {
   posicionPersonaje = createVector(width/2, height/2);
 }
