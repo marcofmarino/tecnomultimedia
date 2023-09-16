@@ -3,7 +3,7 @@
 TP4 - Videojuego tipo arcade en p5.js 
 Marco Marino
 Comisión 3
-Video:
+Video: https://youtu.be/mpuiV3ggySE
 -----------------------------------------
 */
 
