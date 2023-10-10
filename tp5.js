@@ -7,7 +7,7 @@ function draw() {
 }
 
 class Juego {
-  :w
+  atributo1, atributo2;
   constructor (arguments) {
     
   }
