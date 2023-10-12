@@ -7,8 +7,20 @@ function draw() {
 }
 
 class Juego {
-  atributo1, atributo2;
-  constructor (arguments) {
+  constructor () {
+    
+  }
+}
+
+class Personaje {
+  constructor () {
+    
+  }
+}
+
+class Jugador extends Personaje {
+  constructor () {
+    super()
     
   }
 }
