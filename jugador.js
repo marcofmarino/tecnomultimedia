@@ -1,4 +1,4 @@
-class Jugador extends Personaje {
+class Jugador extends Personaje { // Clase Jugador hereda de Personaje
   puedeDisparar;
   constructor (posicion) {
     super(posicion)
@@ -17,11 +17,11 @@ class Jugador extends Personaje {
 
   mover () {
     push();
-    let objetivo = createVector(mouseX, mouseY);
+    let objetivo = createVector(mouseX, mouseY); // Apunta a la posición del cursor (aunque este no sea visible)
     this.direccion = objetivo.copy().sub(this.posicion);
-    this.spawnBala = this.posicion.copy().add(this.direccion.copy().normalize().mult(50));
-    this.cuerpo = this.posicion.copy().add(this.direccion.copy().normalize().mult(-50));
-    this.angulo = -this.direccion.angleBetween(createVector(-1, 0));
+    this.spawnBala = this.posicion.copy().add(this.direccion.copy().normalize().mult(50)); // calcula la posicion del punto de salida de la bala
+    this.cuerpo = this.posicion.copy().add(this.direccion.copy().normalize().mult(-50)); // mover el collider del cuerpo
+    this.angulo = -this.direccion.angleBetween(createVector(-1, 0)); // calcuar el ángulo para rotar al personaje
     pop();
   }
 

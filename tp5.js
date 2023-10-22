@@ -5,11 +5,15 @@
   Video: 
 */
 
+// Variable para el objeto juego
 let juego;
 
 function setup() {
   createCanvas(800, 600);
+  // Instanciar objeto juego de clase Juego
   juego = new Juego();
+
+  // Configurar modos
   imageMode(CENTER);
   rectMode(CENTER);
   textSize(60);
@@ -18,7 +22,7 @@ function setup() {
 }
 
 function draw() {
-  background("red");
+  // Método actualizar de juego
   juego.actualizar();
 }
 
