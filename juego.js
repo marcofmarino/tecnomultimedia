@@ -5,8 +5,10 @@ class Juego {
   balas;
   estado;
   colorFondo;
+  imagenMenu;
   tiempoInicio;
   constructor () {
+    this.imagenMenu = loadImage('assets/menu.png')
     this.estado = 0;
     this.colorFondo = "white";
     this.jugador = new Jugador(createVector(100, height/2));
@@ -18,7 +20,7 @@ class Juego {
     background(this.colorFondo);
     switch (this.estado) {
       case 0:
-        
+        image(this.imagenMenu, width/2, height/2);
         break;
 
       case 1:
@@ -68,11 +70,11 @@ class Juego {
         break;
       case 2:
         this.balas.forEach((element, posElement) => {
-          if (this.jugador.estaVivo && element.posicion.dist(this.enemigo.cuerpo) < 60) {
+          if (this.jugador.estaVivo && element.posicion.dist(this.enemigo.cuerpo) < 40) {
             this.enemigo.estaVivo = false;
             this.estado ++;
             return true;
-          } else if (this.enemigo.estaVivo && element.posicion.dist(this.jugador.cuerpo) < 60) {
+          } else if (this.enemigo.estaVivo && element.posicion.dist(this.jugador.cuerpo) < 40) {
             this.jugador.estaVivo = false;
             this.estado++;
             return true;
@@ -111,11 +113,11 @@ if (this.jugador.puedeDisparar) {
         break;
     
     case 3:
-      this.estado = 0;
+      this.estado = 1;
       this.jugador = new Jugador(createVector(100, height/2));
       this.enemigo = new Enemigo(createVector(700,height/2));
       this.balas = [];
-      this.colorFondo = "white";
+      this.colorFondo = "green";
       cursor();
     break;
     }
