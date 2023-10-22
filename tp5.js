@@ -2,7 +2,7 @@
   TP5 - Videojuego con POO 
   Comisión 3 - Tecnología de Diseño Multimedial 
   Marco Marino
-  Video: 
+  Video: https://youtu.be/hM03LJ1PwDE
 */
 
 // Variable para el objeto juego

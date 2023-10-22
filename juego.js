@@ -111,26 +111,26 @@ class Juego {
   mousePressed () {
     switch (this.estado) {
       case 0: // Al hacer click en el menú principal se cambia de estado
-       this.estado++;
-      this.colorFondo = "green";       
+        this.estado++;
+        this.colorFondo = "green";       
         break;
 
       case 2:
-if (this.jugador.puedeDisparar) { // Si el jugador no disparó, se crea una instancia de bala en el array
-      this.balas.push(new Bala(this.jugador.spawnBala.copy(), this.jugador.direccion.copy()));
-      this.jugador.puedeDisparar = false; // Ya no puede disparar
-    }
+        if (this.jugador.puedeDisparar) { // Si el jugador no disparó, se crea una instancia de bala en el array
+          this.balas.push(new Bala(this.jugador.spawnBala.copy(), this.jugador.direccion.copy()));
+          this.jugador.puedeDisparar = false; // Ya no puede disparar
+        }
         break;
     
-    case 3:
+      case 3:
       // Resetear valores para volver a jugar
-      this.estado = 1;
-      this.jugador = new Jugador(createVector(100, height/2)); // Nuevas instancias de jugador y enemigo
-      this.enemigo = new Enemigo(createVector(700,height/2));
-      this.balas = [];
-      this.colorFondo = "green";
-      cursor();
-    break;
+        this.estado = 1;
+        this.jugador = new Jugador(createVector(100, height/2)); // Nuevas instancias de jugador y enemigo
+        this.enemigo = new Enemigo(createVector(700,height/2));
+        this.balas = [];
+        this.colorFondo = "green";
+        cursor();
+      break;
     }
   }
 
