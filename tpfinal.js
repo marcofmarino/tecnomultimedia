@@ -13,7 +13,7 @@ function preload() {
 }
 
 function setup() {
-   let canvas = createCanvas(600, 600);
+   let canvas = createCanvas(600, 600); // Variable para poder mostrar el canvas en otra posición de la página
    aventuraGrafica = new AventuraGrafica();
 }
 

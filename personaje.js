@@ -1,3 +1,4 @@
+// Las clases Enemigo y Jugador heredan atributos y métodos de la clase Personaje
 class Personaje {
    estaVivo;
    posicion;
@@ -7,12 +8,14 @@ class Personaje {
    cuerpo;
    direccion;
    constructor (posicion) {
+      // Inicializar valores
       this.estaVivo =  true;
       this.posicion = posicion;
       this.angulo = 0;
    }
 
    actualizar () {
+      // El método actualizar envía los mensajes mover y dibujar, las subclases Enemigo y Jugador tienen sus propias implementaciones de estos métodos
       this.mover();
       this.dibujar();
    }

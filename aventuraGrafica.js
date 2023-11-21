@@ -11,14 +11,17 @@ class AventuraGrafica {
       angleMode(DEGREES);
       let cantPantallas = 15;
       this.pantallas = [];
+      // agregar cada pantalla con la información correspondiente
       for (let index = 0; index < cantPantallas; index++) {
          this.pantallas.push(new Pantalla('assets/' + index.toString().padStart(2, '0') + '_p.jpg', archivo[index], '#222222', [LEFT, TOP], 16));
       } 
+      // Fuera del for, se agregan las pantallas de créditos y de juego
       this.pantallas.push(new Pantalla('assets/creditos.jpg', archivo[15], '#f2f2f2', [CENTER, CENTER], 18));
       this.pantallas.push(new Juego());
    }
    
    cambiarEstado(evento) {
+      // Se utilizan diccionarios para facilitar saber a qué pantalla lleva cada botón o evento (ganar, perder o empate en el juego), se utiliza el indice de pantalla actual como clave de un diccionario, lo que retorna otro diccionario que tiene como claves las posibles opciones de esa pantalla
       let opciones = {
          0: {
             "Iniciar": 1,

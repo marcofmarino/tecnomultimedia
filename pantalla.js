@@ -6,12 +6,15 @@ class Pantalla {
    modoTexto;
    tamanio;
    constructor (dirImagen, datos, colorTexto, modoTexto, tamanio) {
+      // Cargar imagen de la pantalla
       this.imagen = loadImage(dirImagen);
-      this.botones = [];
+      // Inicializar como array vacío
+      this.botones = []; 
       this.textos = datos['textos'];
       this.modoTexto = modoTexto;
       this.colorTexto = colorTexto;
       this.tamanio = tamanio;
+      // Agregar botones al array con instancias de botones
       datos["botones"].forEach(element => {
          if(element.tipo === "rectangular") {
             this.botones.push(new BotonRectangular(element.etiqueta, element.posicion, element.tamanio));   
@@ -22,6 +25,7 @@ class Pantalla {
    }
 
    actualizar () {
+      //Mostrar imagen, textos y botones de la pantalla
       push();
       image(this.imagen, 0, 0);
       textAlign(this.modoTexto[0], this.modoTexto[1]);
@@ -37,6 +41,7 @@ class Pantalla {
    }
 
    mousePressed () {
+      // Recorrer array de botones para comprobar si alguno fue pulsado
       this.botones.forEach(element => {
          if (element.colision()) {
             aventuraGrafica.cambiarEstado(element.etiqueta);

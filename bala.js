@@ -15,6 +15,7 @@ class Bala {
    }
 
    mover () {
+      // Normalizar la dirección para que la bala sea desplazada de acuerdo a su velocidad
       this.posicion.add(this.direccion.normalize().copy().mult(this.rapidez));
    }
 
